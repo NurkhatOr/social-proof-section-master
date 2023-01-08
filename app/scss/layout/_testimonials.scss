@@ -1,0 +1,57 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/breakpoints" as br;
+
+.testimoinals {
+  margin-bottom: 5rem;
+
+  @include br.breakpoint-up(medium) {
+    display: flex;
+    gap: 30px;
+  }
+}
+
+.testimonials--cards {
+  background-color: var.$vry-drk-mgnta;
+  margin-bottom: 1rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  color: #fff;
+
+  @include br.breakpoint-up(medium) {
+    margin: 0;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  p {
+    margin: 0;
+    text-align: left;
+  }
+
+  span {
+    color: var.$drk-gry-mgnta;
+  }
+}
+
+.testimonials--cards__text {
+  p {
+    margin-top: 1.8725rem;
+    text-align: center;
+  }
+}
+
+.testimonials--cards {
+  &:nth-of-type(2) {
+    position: relative;
+    top: 1rem;
+  }
+
+  &:last-of-type {
+    position: relative;
+    top: 2rem;
+  }
+}

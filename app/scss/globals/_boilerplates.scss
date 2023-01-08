@@ -1,0 +1,65 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/breakpoints" as br;
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+  font-family: "League Spartan", sans-serif;
+  font-size: var.$fs-100;
+  text-align: center;
+  color: var.$vry-drk-mgnta;
+
+  background-image: url(../../../images/bg-pattern-top-mobile.svg),
+    url(../../../images/bg-pattern-bottom-mobile.svg);
+  background-position: top right, bottom;
+  background-repeat: no-repeat;
+
+  @include br.breakpoint-up(medium) {
+    background-image: url(../../../images/bg-pattern-top-desktop.svg),
+      url(../../../images/bg-pattern-bottom-desktop.svg);
+    background-position: top left, bottom right;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+.container {
+  max-width: 69.375rem;
+  margin-inline: auto;
+  padding: 1.5rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
